@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <style>
+        *{
+            font-family: system-ui;
+        }
+       
+        #frm{
+            background-color: pink;
+            margin: 0;
+            padding: 20px;
+        }
+        #inline{width:100%;
+            height:auto;
+            display:flex;
+            background-color: pink;
+            } 
+        .left{
+            width:30%;
+            height: 530px;;
+            background-image: linear-gradient(to bottom right, rgb(201, 134, 145), rgb(228, 93, 116));
+            margin:10px;
+            border: groove;
+            border-radius: 20px;
+            border-style: double;
+            padding: 20px;
+            font-weight: bold;
+            box-shadow: 10px 20px 30px  palevioletred;
+            animation: mymove 2s infinite;
+
+        }
+
+        @keyframes mymove{
+            50% {box-shadow: 30px 40px 50px palevioletred;} 
+        }
+        .middle{
+            background-color:green;
+            width: 30%;
+            margin:10px;
+            height: fit-content;
+            border: groove;
+            border-radius: 20px;
+            border-style: double;
+            text-align: center;
+            padding-top:20px;
+            background-image: linear-gradient(to bottom right, rgb(201, 134, 145), rgb(228, 93, 116));
+            box-shadow: 10px 20px 30px  palevioletred;
+            animation: mymove 2s infinite;
+
+}
+
+@keyframes mymove{
+    50% {box-shadow: 30px 40px 50px palevioletred;} 
+}
+        .right{
+            width:30%;
+            height:fit-content;
+            background-color:green;
+            
+            margin:10px;
+            margin-top: 10px;
+            border: groove;
+            border-radius: 20px;
+            border-style: double;
+            padding: 20px;
+            background-image: linear-gradient(to bottom right, rgb(201, 134, 145), rgb(228, 93, 116));
+            box-shadow: 10px 20px 30px  palevioletred;
+            animation: mymove 2s infinite;
+
+}
+
+@keyframes mymove{
+    50% {box-shadow: 30px 40px 50px palevioletred;} 
+}
+       
+        h2{
+            text-align: center;
+        }
+
+        #eqbtn{
+         align-content: center;
+        }
+        
+        .brdrL{
+            width: 300px;
+            height: 25px;
+            border-radius: 15px;
+            border-style: none;
+            background-color: pink;
+            padding: 8px;
+            
+        }
+        .brdr{
+            width: 300px;
+            border-radius: 15px;
+            border-style: none;
+            background-color: pink;
+            padding: 8px;
+            margin-bottom: 10px;
+
+        }
+       
+        #tmplt{
+            width:80%;
+            align-content: center;
+            height:auto;
+            display:flex;
+            margin-top: 10px;
+            display: none;
+            margin-left: 110px;
+            
+            
+            } 
+           
+            .lefttemplate{
+                width:30%;
+               
+                
+                
+
+            }
+            .righttemplate{
+                width:55%;
+                margin-left: 0;
+                background-color: white;
+                padding-right: 30px;
+            }
+            .myimg{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                margin-left: 79px;
+                margin-top: 50px;
+            }
+            .prsnl_details{
+                text-align: center;
+                
+            }
+            #Tname2{
+                text-align: center;
+            }
+            .card{
+                margin-left: 20px;
+            }
+            .card-header{
+               
+                height: 35px;
+                border-radius: 10px;
+            }
+          
+            .obj{
+                padding-top: 9px;
+                padding-left: 8px;
+            }
+            #print_btn{
+                background-image: linear-gradient(to bottom right, rgb(201, 134, 145), rgb(228, 93, 116));
+                margin-top: 20px;
+                border-radius: 15px;
+                width: 80px;
+                height: 50px;
+                font-size: 15px;
+                
+            }
+            #pbtn{
+                text-align: center;
+                display: none;  
+            }
+            #Generate_btn{
+                font-size: 15px;
+                margin-top: 20px;
+                border-radius: 15px;
+                width: 100px;
+                height: 50px;
+                background-image: linear-gradient(to bottom right, rgb(201, 134, 145), rgb(228, 93, 116));
+                
+            }
+            #Gbtn{
+                text-align: center;
+                background-color: pink;
+            
+                
+            }
+            .bgcolor{
+                background-color: royalblue;
+            }
+            #color_optns {
+                border-style: groove;
+                height: fit-content;
+                width: fit-content;
+                border-radius: 10px;
+                padding: 7px;
+                background-color:pink;
+                display: none;
+                margin-left: 50px;
+                
+            }
+            input:focus, textarea{
+                outline: none;
+            }
+            #Tskill{
+                margin-top: 0px;
+                padding-left: 10px;
+            }
+            .handles{
+                display:inline-flex;
+                margin: 0px;
+
+            }
+            
+    </style>
+</head>
+<body>
+    <div id="frm">
+    <h2>Resume Generator</h2><br>
+    <div id="inline"> 
+        <div class="left">
+            <label> <b> Upload your photo</b></label><br><br>
+        <input type="file" id="imgField"><br><br>
+            <label> Your Name</label><br>
+		<input type="text" id="NameField" class="brdrL" placeholder="Enter here"><br><br>
+		<label for="ContactField">Contact Number</label><br>
+		<input type="text" id="ContactField" class="brdrL" placeholder="Enter here"><br><br>
+        <label for="MailField">E-Mail</label><br>
+		<input type="text" id="MailField" class="brdrL" placeholder="Enter here"><br><br>
+		<p><b><u>Important handles</u></b></p><br>
+		
+		<label for="fbField">Facebook</label><br>
+		<input type="text" id="fbField" class="brdrL" placeholder="Enter here"><br><br>
+		<label for="LnkdnField">LinkedIn</label><br>
+		<input type="text" id="LnkdnField" class="brdrL" placeholder="Enter here"><br><br>
+        
+		
+        </div> 
+        <div class="middle">
+            <label for=""> <b> Objective</b></label><br>
+		<textarea id="objField" class="brdr" placeholder="Enter here" cols="40" rows="4"></textarea><br><br>
+
+        <div id="skills">
+		
+            <label for=""><b>Skils</b></label><br>
+            <textarea name="" class="skillField brdr" placeholder="Enter here" cols="25" rows="3"></textarea>
+            <div id="skillbtn">
+                <button onclick="addskill()"> Add </button><br><br>
+            </div>
+    </div>
+        </div>
+        <div class="right">
+            
+            
+
+        <div id="eq">
+		
+            <label for=""><b>Educational Qualifications</b></label><br>
+            <textarea name="" class="eqField brdr" placeholder="Enter here" cols="25" rows="3"></textarea><br>
+            <div id="eqbtn">
+                <button onclick="addeq()"> Add </button><br><br>
+            </div>
+    </div>
+        
+        <div id="we">
+            <label for=""><b>Work Experience</b></label><br>
+            <textarea class="weField brdr" placeholder="Enter here" cols="25" rows="3"></textarea>
+            <div id="webtn">
+                <button onclick="addwe()">Add</button>
+            </div>
+        </div>
+        </div> 
+        
+        </div>
+    </div> 
+    <div id="Gbtn">
+        <button onclick="genCV()" id="Generate_btn">Generate</button>
+    </div>
+    <div id="color_optns">
+    <button onclick="grey()" style="margin-right:20px ; background-color: pink; border: none; font-size: 25px;">⚫</button>
+    <button onclick="red()" style="margin-right:20px; background-color: pink; border: none; font-size: 25px;">🔴</button>
+    <button onclick="blue()" style="background-color: pink; border: none; font-size: 25px;">🔵</button>
+</div>
+    <div id="tmplt">
+        
+        <div id="leftcolor" class="lefttemplate bgcolor">
+        <img src="default_pfp.jpg" class="myimg" id="Timg">
+        <div class="prsnl_details">
+            <p id="Tname1"></p>
+            <p id="Tcontact"></p>
+            <p id="Tmail"></p>
+            <hr width="80%" color="black" id="hr"><br>
+           
+                <span><b>Facebook- </b><span id="Tfb"></span></span><br><br>
+                <span><b>LinkedIn- </b> <span id="Tlnkdn"></span></span>
+        
+            <div class="card">
+                <div  class="card-header">
+                    <h3 >Skills</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="Tskill">
+                        <li>hgjhukh</li>
+                        <li>cghkjhkgvb</li>
+                        <li>ghjgvmb</li>
+                        <li>vghjfgyukgh</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="righttemplate">
+            <h1 id="Tname2" ></h1>
+            
+            <div class="card">
+                <div id="objcolor" class="card-header bgcolor">
+                    <h3 class="obj">Objective</h3>
+                </div><br>
+                <div class="card-body">
+                    <p id="Tobj"></p>
+                </div>
+            </div><br>
+            
+
+            <div class="card">
+                <div id="eqcolor" class="card-header bgcolor">
+                    <h3 class="obj">Educational Qualifications</h3>
+                </div><br>
+                <div class="card-body">
+                    <ul id="Teq">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                    </ul><br>
+                </div>
+            </div>
+            <div class="card">
+                <div id="wecolor" class="card-header bgcolor">
+                    <h3  class="obj">Work Experience</h3>
+                </div><br>
+                <div class="card-body">
+                    <ul id="Twe">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        
+                    </ul>
+                </div>
+            </div>
+           
+        </div>
+    
+    </div>
+    <div id="pbtn">
+        <button onclick="printCV()" id="print_btn">Print</button>
+    </div>
+
+
+
+<script>
+    function addskill() {
+    let newNode=document.createElement('textarea')
+	
+	newNode.classList.add('skillField')
+	newNode.setAttribute('rows', 3)
+	newNode.setAttribute('cols', 25)
+    newNode.classList.add('brdr')
+    newNode.setAttribute('placeholder','Enter here')
+
+	let skillOb=document.getElementById("skills")
+	let skillbtnOb=document.getElementById("skillbtn")
+
+	skillOb.insertBefore(newNode, skillbtnOb)
+
+}
+    function addeq() {
+    let newNode=document.createElement('textarea')
+	
+	newNode.classList.add('eqField')
+	newNode.setAttribute('rows', 3)
+	newNode.setAttribute('cols', 25)
+    newNode.classList.add('brdr')
+    newNode.setAttribute('placeholder','Enter here')
+
+	let eqOb=document.getElementById("eq")
+	let eqbtnOb=document.getElementById("eqbtn")
+
+	eqOb.insertBefore(newNode, eqbtnOb)
+
+}
+function addwe() {
+    let newNode=document.createElement('textarea')
+	
+	newNode.classList.add('weField')
+	newNode.setAttribute('rows', 3)
+	newNode.setAttribute('cols', 25)
+    newNode.classList.add('brdr')
+    newNode.setAttribute('placeholder','Enter here')
+
+	let weOb=document.getElementById("we")
+	let webtnOb=document.getElementById("webtn")
+
+	weOb.insertBefore(newNode, webtnOb)
+}
+//generatng CV
+function genCV()  {
+    //img
+   
+    let file = document.getElementById("imgField").files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onloadend = function(){
+        document.getElementById("Timg").src= reader.result;
+    };
+
+    document.getElementById("Tname1").innerHTML= document.getElementById("NameField").value;
+    document.getElementById("Tname2").innerHTML= document.getElementById("NameField").value;
+    document.getElementById("Tcontact").innerHTML= document.getElementById("ContactField").value;
+    document.getElementById("Tmail").innerHTML= document.getElementById("MailField").value;
+    document.getElementById("Tfb").innerHTML= document.getElementById("fbField").value;
+    document.getElementById("Tlnkdn").innerHTML= document.getElementById("LnkdnField").value;
+    document.getElementById("Tobj").innerHTML= document.getElementById("objField").value;
+
+    //skills
+    let skill = document.getElementsByClassName("skillField");
+    let str = "";
+    for(let e of skill) {
+        str = str + `<li> ${e.value} </li>`;
+    }
+    document.getElementById("Tskill").innerHTML=str;
+
+    
+
+    //Educational qualifications
+
+    let eqs = document.getElementsByClassName("eqField");
+    let str1 = "";
+    for(let i of eqs) {
+        str1 = str1 + `<li> ${i.value} </li>`;
+    }
+    document.getElementById("Teq").innerHTML=str1;
+
+    //Work Experience
+    let wes = document.getElementsByClassName("weField");
+    let str2 = "";
+    for(let i of wes) {
+        str2 = str2 + `<li> ${i.value} </li>`;
+    }
+    document.getElementById("Twe").innerHTML=str2;
+
+
+    document.getElementById('frm').style.display='none'
+    document.getElementById('Gbtn').style.display='none'
+
+    document.getElementById('tmplt').style.display ="flex";
+    document.getElementById('color_optns').style.display="flex";
+    document.getElementById('pbtn').style.display ="block";
+    
+} 
+function grey(){
+    document.getElementById("wecolor").style.backgroundColor = "#808080";
+    document.getElementById("objcolor").style.backgroundColor = "#808080";
+    document.getElementById("eqcolor").style.backgroundColor = "#808080";
+    document.getElementById("leftcolor").style.backgroundColor = "#808080";
+
+    
+}
+function red(){
+    document.getElementById("wecolor").style.backgroundColor = "red";
+    document.getElementById("objcolor").style.backgroundColor = "red";
+    document.getElementById("eqcolor").style.backgroundColor = "red";
+    document.getElementById("leftcolor").style.backgroundColor = "red";
+}
+function blue(){
+document.getElementById("wecolor").style.backgroundColor = "royalblue";
+    document.getElementById("objcolor").style.backgroundColor = "royalblue";
+    document.getElementById("eqcolor").style.backgroundColor = "royalblue";
+    document.getElementById("leftcolor").style.backgroundColor = "royalblue";
+}
+function printCV(){
+    document.getElementById('pbtn').style.display ="none";
+    document.getElementById('color_optns').style.display ="none";
+    document.getElementById('tmplt').style.display ="flex";
+    window.print();
+}
+</script>
+</body>
+
+
+</html>
